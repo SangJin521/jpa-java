@@ -14,12 +14,38 @@ public class Jpa {
         try {
             em.getTransaction().begin();
 
-            Member member = new Member();
-            member.setMemberName("testUser");
+//            Member member = new Member();
+//            member.setMemberName("testUser");
+//
+//
+//            em.persist(member);
+
+            //조회 테스트
+//            System.out.println("##################################before-find");
+//            Member exsistMember = em.find(Member.class,3L);
+//            System.out.println("##################################after-find");
+//
+//
+//            System.out.println("##################################before-find2");
+//            Member exsistMember2 = em.find(Member.class,3L);
+//            System.out.println("##################################after-find2");
+
+            //수정 테스트
+//            System.out.println("##################################before-update");
+//            exsistMember.setMemberName("testupdate77777");
+//            System.out.println("##################################before-update");
 
 
-            em.persist(member);
+            //flush테스트
+//            System.out.println("##################################before-flush");
+//            em.flush();
+//            System.out.println("##################################after-flush");
+
+            //em.getTransaction().rollback();
+
+            System.out.println("##################################before-commit");
             em.getTransaction().commit();
+            System.out.println("##################################after-commit");
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback(); // 트랜잭션 롤백
